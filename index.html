@@ -1,271 +1,945 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don't Starve Together キャラクターガイド</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h1 {
-      text-align: center;
-      color: #f39c12;
-    }
-    #char-select {
-      background: #1e1e1e;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-    }
-    .char-card {
-      background: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .back-to-top {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .wiki-link {
-      color: #4a90e2;
-      text-decoration: none;
-      font-size: 0.9em;
-    }
-    .wiki-link:hover {
-      text-decoration: underline;
-    }
-    .divider {
-      color: #666;
-    }
-    a {
-      color: #f39c12;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Don't Starve Together キャラクターガイド</h1>
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Don't Starve Together - 全18サバイバー完全ガイド</title>
+        <style>
+          :root {
+          --bg-color: #2a1f1d;
+          --card-bg: #3b2d29;
+          --text-main: #e8ded1;
+          --text-muted: #b8a99a;
+          --accent-gold: #d4a359;
+          --accent-red: #d9534f;
+          --border-color: #54433d;
+          --badge-bg: #251a18;
 
-    <!-- キャラクター選択ナビゲーション -->
-    <div id="char-select">
-      <h2>キャラクター一覧</h2>
-      <ul>
-        <li><a href="#wilson">ウィルソン</a></li>
-        <li><a href="#willow">ウィロー</a></li>
-        <li><a href="#wolfgang">ヴォルフガング</a></li>
-        <li><a href="#wendy">ウェンディ</a></li>
-        <li><a href="#wx78">WX-78</a></li>
-        <li><a href="#wickerbottom">ウィッカーボトム</a></li>
-        <li><a href="#woodie">ウッドジー</a></li>
-        <li><a href="#wes">ウェス</a></li>
-        <li><a href="#maxwell">マックスウェル</a></li>
-        <li><a href="#wigfrid">ウィグフリド</a></li>
-        <li><a href="#webber">ウェブスター</a></li>
-        <li><a href="#winona">ウィンナ</a></li>
-        <li><a href="#warly">ウォーリー</a></li>
-        <li><a href="#wortox">ウォトックス</a></li>
-        <li><a href="#wormwood">ワームウッド</a></li>
-        <li><a href="#wurt">ワート</a></li>
-        <li><a href="#walter">ウォルター</a></li>
-        <li><a href="#wanda">ワンダ</a></li>
-      </ul>
-    </div>
+          /* Tierカラー定義 */
+          --tier-s-bg: #e67e22;
+          --tier-s-text: #ffffff;
+          --tier-a-bg: #9b59b6;
+          --tier-a-text: #ffffff;
+          --tier-b-bg: #3498db;
+          --tier-b-text: #ffffff;
+          --tier-c-bg: #2ecc71;
+          --tier-c-text: #ffffff;
+          --tier-f-bg: #7f8c8d;
+          --tier-f-text: #ffffff;
+          }
+          html {
+          scroll-behavior: smooth;
+          }
+          body {
+          font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-main);
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          font-size: 15px;
+          line-height: 1.6;
+          }
+          .container {
+          max-width: 980px;
+          width: 100%;
+          }
 
-    <!-- 各キャラクターセクション -->
-    <div id="wilson" class="char-card">
-      <h2>ウィルソン (Wilson)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wilson" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+          /* トップの目次エリア */
+          .index-box {
+          background: var(--card-bg);
+          border: 2px solid var(--accent-gold);
+          border-radius: 12px;
+          padding: 20px;
+          margin-bottom: 30px;
+          text-align: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+          }
+          .index-title {
+          color: var(--accent-gold);
+          margin-top: 0;
+          font-size: 24px;
+          }
+          .index-box p {
+          color: var(--text-muted);
+          font-size: 15px;
+          }
+          .nav-section-title {
+          color: var(--accent-gold);
+          font-size: 16px;
+          margin: 20px 0 10px 0;
+          text-align: left;
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: 4px;
+          }
+          .nav-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 16px;
+          margin-top: 10px;
+          }
+          .nav-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: var(--badge-bg);
+          border: 1px solid var(--border-color);
+          border-radius: 10px;
+          padding: 4px;
+          color: var(--text-main);
+          text-decoration: none;
+          overflow: hidden;
+          transition: transform 0.2s, border-color 0.2s, background 0.2s;
+          }
+          .nav-card img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          display: block;
+          }
+          .nav-card .char-name-label {
+          font-size: 14px;
+          color: var(--text-muted);
+          font-weight: bold;
+          padding: 8px 0;
+          width: 100%;
+          background: rgba(0,0,0,0.3);
+          }
+          .nav-card:hover {
+          transform: translateY(-4px);
+          border-color: var(--accent-gold);
+          background: #33231f;
+          }
+          .nav-card:hover .char-name-label {
+          color: var(--accent-gold);
+          }
+
+          /* 各キャラのカードセクション */
+          .char-card {
+          background: var(--card-bg);
+          border: 1px solid var(--border-color);
+          border-radius: 12px;
+          padding: 24px;
+          margin-bottom: 28px;
+          scroll-margin-top: 20px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+          display: flex;
+          gap: 24px;
+          align-items: center;
+          }
+
+          /* 左側：額縁風デザインのポートレートエリア */
+          .char-sidebar {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          flex-shrink: 0;
+          width: 280px;
+          background: var(--badge-bg);
+          border: 2px solid var(--border-color);
+          border-radius: 10px;
+          padding: 12px;
+          box-sizing: border-box;
+          box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+          }
+          .char-avatar-large {
+          width: 100%;
+          height: 320px;
+          object-fit: cover;
+          border-radius: 6px;
+          margin-bottom: 10px;
+          }
+          .char-portrait-label {
+          font-size: 16px;
+          font-weight: bold;
+          color: var(--accent-gold);
+          letter-spacing: 1px;
+          text-align: center;
+          }
+
+          /* 右側：コンテンツエリア */
+          .char-content {
+          flex: 1;
+          }
+          .char-header-text {
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: 10px;
+          margin-bottom: 14px;
+          }
+          .char-title {
+          color: var(--accent-gold);
+          margin: 0 0 8px 0;
+          font-size: 26px;
+          }
+          .badge-group {
+          display: flex;
+          gap: 10px;
+          font-size: 13px;
+          align-items: center;
+          flex-wrap: wrap;
+          }
+          .badge {
+          background: var(--badge-bg);
+          border: 1px solid var(--border-color);
+          padding: 4px 10px;
+          border-radius: 4px;
+          color: var(--text-main);
+          }
+          .badge-tier-s { background: var(--tier-s-bg); color: var(--tier-s-text); font-weight: bold; border: none; }
+          .badge-tier-a { background: var(--tier-a-bg); color: var(--tier-a-text); font-weight: bold; border: none; }
+          .badge-tier-b { background: var(--tier-b-bg); color: var(--tier-b-text); font-weight: bold; border: none; }
+          .badge-tier-c { background: var(--tier-c-bg); color: var(--tier-c-text); font-weight: bold; border: none; }
+          .badge-tier-f { background: var(--tier-f-bg); color: var(--tier-f-text); font-weight: bold; border: none; }
+
+          .catchphrase {
+          font-size: 15px;
+          color: var(--accent-gold);
+          font-style: italic;
+          margin-bottom: 18px;
+          background: rgba(212, 163, 89, 0.1);
+          padding: 10px 14px;
+          border-left: 4px solid var(--accent-gold);
+          border-radius: 0 6px 6px 0;
+          }
+          .stars {
+          color: #f39c12;
+          font-weight: bold;
+          }
+
+          /* ステータステーブル */
+          .status-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 18px 0;
+          }
+          .status-table th, .status-table td {
+          border: 1px solid var(--border-color);
+          padding: 8px 10px;
+          text-align: center;
+          }
+          .status-table th {
+          background: #2b1f1c;
+          color: var(--accent-gold);
+          font-size: 13px;
+          }
+          .status-table th .stat-header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          }
+          .status-table th img {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+          }
+          .status-table td {
+          background: #332623;
+          font-weight: bold;
+          font-size: 17px;
+          }
+
+          h4 {
+          color: var(--accent-gold);
+          margin: 20px 0 10px 0;
+          font-size: 16px;
+          border-left: 4px solid var(--accent-gold);
+          padding-left: 10px;
+          }
+          ul {
+          padding-left: 20px;
+          margin: 10px 0;
+          }
+          li {
+          margin-bottom: 8px;
+          line-height: 1.5;
+          font-size: 15px;
+          }
+          .warning-list li {
+          color: #f0a3a1;
+          }
+
+          /* トップに戻るボタン */
+          .back-to-top {
+          text-align: right;
+          margin-top: 20px;
+          padding-top: 10px;
+          border-top: 1px dashed var(--border-color);
+          }
+          .back-to-top a {
+          color: var(--accent-gold);
+          text-decoration: none;
+          font-size: 13px;
+          font-weight: bold;
+          }
+          .back-to-top a:hover {
+          text-decoration: underline;
+          }
+
+          /* レスポンシブ対応 */
+          @media (max-width: 768px) {
+          .char-card {
+          flex-direction: column;
+          align-items: center;
+          }
+          .char-sidebar {
+          width: 100%;
+          max-width: 320px;
+          }
+          .char-avatar-large {
+          height: 300px;
+          }
+          }
+        </style>
+      </head>
+  <body>
+
+    <div class="container">
+
+      <!-- トップ（目次） -->
+      <div id="top" class="index-box">
+        <h1 class="index-title">Don't Starve Together サバイバー一覧</h1>
+        <p>確認したいキャラクターを選択すると該当セクションへジャンプします。</p>
+
+        <div class="nav-section-title">■ 初期解放キャラクター (14体)</div>
+        <div class="nav-grid">
+          <a href="#wilson" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wilson_Original_Portrait.png?format=original" alt="ウィルソン">
+              <span class="char-name-label">ウィルソン</span>
+            </a>
+          <a href="#willow" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Willow_Original_Portrait.png?format=original" alt="ウィロー">
+              <span class="char-name-label">ウィロー</span>
+            </a>
+          <a href="#wolfgang" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wolfgang_Original_Portrait.png?format=original" alt="ウォルフガング">
+              <span class="char-name-label">ウォルフガング</span>
+            </a>
+          <a href="#wendy" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wendy_Original_Portrait.png?format=original" alt="ウェンディ">
+              <span class="char-name-label">ウェンディ</span>
+            </a>
+          <a href="#wx78" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/WX-78_Original_Portrait.png?format=original" alt="WX-78">
+              <span class="char-name-label">WX-78</span>
+            </a>
+          <a href="#wickerbottom" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wickerbottom_Original_Portrait.png?format=original" alt="ウィッカーボトム">
+              <span class="char-name-label">ウィッカーボトム</span>
+            </a>
+          <a href="#woodie" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Woodie_Original_Portrait.png?format=original" alt="ウッディ">
+              <span class="char-name-label">ウッディ</span>
+            </a>
+          <a href="#wes" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wes_Original_Portrait.png?format=original" alt="ウェス">
+              <span class="char-name-label">ウェス</span>
+            </a>
+          <a href="#maxwell" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Maxwell_Original_Portrait.png?format=original" alt="マックスウェル">
+              <span class="char-name-label">マックスウェル</span>
+            </a>
+          <a href="#wigfrid" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wigfrid_Original_Portrait.png?format=original" alt="ウィグフリッド">
+              <span class="char-name-label">ウィグフリッド</span>
+            </a>
+          <a href="#webber" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Webber_Original_Portrait.png?format=original" alt="ウェバー">
+              <span class="char-name-label">ウェバー</span>
+            </a>
+          <a href="#winona" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Winona_Original_Portrait.png?format=original" alt="ウィノナ">
+              <span class="char-name-label">ウィノナ</span>
+            </a>
+          <a href="#warly" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Warly_Original_Portrait.png?format=original" alt="ワーリー">
+              <span class="char-name-label">ワーリー</span>
+            </a>
+          <a href="#walter" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Walter_Original_Portrait.png?format=original" alt="ウォルター">
+              <span class="char-name-label">ウォルター</span>
+            </a>
+        </div>
+
+        <div class="nav-section-title">■ DLCキャラクター (4体)</div>
+        <div class="nav-grid">
+          <a href="#wortox" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wortox_Original_Portrait.png?format=original" alt="ウォトックス">
+              <span class="char-name-label">ウォトックス</span>
+            </a>
+          <a href="#wormwood" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wormwood_Original_Portrait.png?format=original" alt="ウォームウッド">
+              <span class="char-name-label">ウォームウッド</span>
+            </a>
+          <a href="#wurt" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wurt_Original_Portrait.png?format=original" alt="ワート">
+              <span class="char-name-label">ワート</span>
+            </a>
+          <a href="#wanda" class="nav-card">
+            <img src="https://dontstarve.wiki.gg/images/Wanda_Original_Portrait.png?format=original" alt="ワンダ">
+              <span class="char-name-label">ワンダ</span>
+            </a>
+        </div>
       </div>
-    </div>
 
-    <div id="willow" class="char-card">
-      <h2>ウィロー (Willow)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Willow" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 1. ウィルソン -->
+      <div id="wilson" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Wilson_Original_Portrait.png?format=original" alt="ウィルソン" class="char-avatar-large">
+            <div class="char-portrait-label">WILSON</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Wilson" target="_blank" style="color: inherit; text-decoration: underline;">ウィルソン (Wilson)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-b">Tier: B</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★★★</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「癖がなく扱いやすい、科学と錬金術の万能サバイバー」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>150</td>
+              <td>150</td>
+              <td>200</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>大きな弱点やクセが一切なく、基本ステータスのバランスが良い。</li>
+            <li>時間経過でヒゲが伸び、最高段階で冬の防寒着として機能する。剃ると正気度が回復し、素材（ヒゲ）を入手。</li>
+            <li>
+              <strong>【スキル】</strong> 錬金術（Transmutation）を開放でき、鉱石・宝石・上位素材などを相互に変換できる。
+            </li>
+            <li>
+              <strong>【スキル】</strong> 松明の効果時間延長や、投擲可能な松明を作成できる。
+            </li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>序盤から爆発的な火力を出したり、特定の作業を劇的に高速化するような特化能力はない。</li>
+            <li>夏場はヒゲが生えていると熱がこもりやすくなるため、こまめに剃る必要がある。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>冬が来る前にヒゲを最長まで伸ばし、防寒具代わりに活用しよう。ヒゲは復活アイテム「肉人形」の貴重な材料にもなる。</li>
+            <li>中盤以降はスキルツリーの錬金術を活用し、チームで不足している稀少素材（宝石類など）を変換して提供するとマルチで非常に重宝される。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="wolfgang" class="char-card">
-      <h2>ヴォルフガング (Wolfgang)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wolfgang" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 2. ウィロー -->
+      <div id="willow" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Willow_Original_Portrait.png?format=original" alt="ウィロー" class="char-avatar-large">
+            <div class="char-portrait-label">WILLOW</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Willow" target="_blank" style="color: inherit; text-decoration: underline;">ウィロー (Willow)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-c">Tier: C〜B</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★★☆</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「火と相棒のぬいぐるみを駆使する範囲攻撃＆正気度ケア職人」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>150</td>
+              <td>150</td>
+              <td>120</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>無限に使える専用光源「ウィローのライター」を初期装備。</li>
+            <li>火の近くにいると正気度が回復し、火によるダメージを一切受けない。</li>
+            <li>正気度低下時に巨大化して戦う「バーニー（熊のぬいぐるみ）」を所持。</li>
+            <li>
+              <strong>【スキル】</strong> 燃えた敵から「Ember（余燼）」を回収し、強力な範囲魔法（火球など）を放てる。
+            </li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>正気度上限が120と低く、すぐに悪夢のモンスターが出現するラインまで下がりやすい。</li>
+            <li>凍結（寒さ）ダメージに弱く、他キャラより凍えるスピードが早い。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>正気度が下がり影のモンスターが出たら、慌てずバーニーを地面に置こう。バーニーがターゲットを引き受けてくれるため安全に対処できる。</li>
+            <li>スキルツリーの「Controlled Burning」を取ると火災の延焼を防げるため、マルチプレイで拠点を誤って全焼させるリスクをなくせる。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="wendy" class="char-card">
-      <h2>ウェンディ (Wendy)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wendy" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 3. ウォルフガング -->
+      <div id="wolfgang" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Wolfgang_Original_Portrait.png?format=original" alt="ウォルフガング" class="char-avatar-large">
+            <div class="char-portrait-label">WOLFGANG</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Wolfgang" target="_blank" style="color: inherit; text-decoration: underline;">ウォルフガング (Wolfgang)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-s">Tier: S</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★☆☆</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「筋トレで圧倒的火力とスピードを手にする最強の重戦車」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>200</td>
+              <td>200</td>
+              <td>200</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>「ダンベル」を使って筋トレすることで、3段階（弱 / 普通 / 強）に形態変化する。</li>
+            <li>「強（マッチョ）」形態時は攻撃力が最大2倍になり、移動速度が上昇。さらに重い物を運ぶ際の速度ペナルティが無くなる。</li>
+            <li>専用施設の「ジム」を拠点に建設でき、効率よく筋力メーターを上げられる。</li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>暗闇やモンスターの近くにいると、正気度が他キャラの1.25倍の速さでゴリゴリ減る。</li>
+            <li>マッチョ形態を維持するためのコスト（食料消費や筋トレの手間）が高く、管理が忙しい。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>普段は「普通形態」で行動し、戦闘直前にダンベルで筋トレして「マッチョ形態」になるのが食料を節約する基本。弱形態になるメリットはない。</li>
+            <li>戦闘における最強キャラの一角。武器や防具を作れる「ウィグフリッド」との相性が抜群に良く、彼女から装備をもらうと無双できる。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="wx78" class="char-card">
-      <h2>WX-78</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/WX-78" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 4. ウェンディ -->
+      <div id="wendy" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Wendy_Original_Portrait.png?format=original" alt="ウェンディ" class="char-avatar-large">
+            <div class="char-portrait-label">WENDY</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Wendy" target="_blank" style="color: inherit; text-decoration: underline;">ウェンディ (Wendy)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-s">Tier: S</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★★★</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「双子の幽霊『アビゲイル』と共に戦う、雑魚敵処理のスペシャリスト」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>150</td>
+              <td>150</td>
+              <td>200</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>「アビゲイルの花」を使い、妹の幽霊アビゲイルを召喚。アビゲイルの範囲攻撃で敵の群れをなぎ倒せる。</li>
+            <li>暗闇や怪物の近くにいても、正気度の低下スピードが他のキャラより25%遅い。</li>
+            <li>アビゲイルを強化・回復する専用の「エリクサー（薬品）」を作成できる。</li>
+            <li>拠点に「シスターン（花壺）」を設置でき、周囲のプレイヤーの正気度を回復させられる。</li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>ウェンディ自身の直接攻撃力は他キャラの0.75倍と低め。</li>
+            <li>ボスなどの単体高火力敵に対してはアビゲイルがすぐ死んでしまうため、適切な指示（引き際）が必要。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>クモ、ハチ、ハウンドなど、大量の敵が出る場所はアビゲイルに任せるだけで完封できる。初心者はまずウェンディを選ぶと生存率が劇的に上がる。</li>
+            <li>正気度が減りにくい特性を活かし、夜間の探索や地下探索を積極的に請け負うとチームに貢献できる。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="wickerbottom" class="char-card">
-      <h2>ウィッカーボトム (Wickerbottom)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wickerbottom" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 5. WX-78 -->
+      <div id="wx78" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/WX-78_Original_Portrait.png?format=original" alt="WX-78" class="char-avatar-large">
+            <div class="char-portrait-label">WX-78</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/WX-78" target="_blank" style="color: inherit; text-decoration: underline;">WX-78（ダブリューエックス78）</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-a">Tier: A</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★★☆</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「電子回路（モジュール）で能力を自由にカスタマイズできるロボット」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>125 (拡張可)</td>
+              <td>125</td>
+              <td>150</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>回路（Circuits）を脱着し、移動速度アップ・暗視・寒さ耐性・ドローン召喚などを目的に応じていつでも組み替えられる。</li>
+            <li>腐った食べ物（Stale / Spoiled）を食べてもステータス減少ペナルティを受けない。</li>
+            <li>
+              <strong>【スキルツリー】</strong> 自動農園の管理、アイテムの自動輸送、マップテレポートなどが可能になる。
+            </li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>雨や水に濡れると継続スリップダメージを受けるため、防水対策が必須。</li>
+            <li>雷に当たるとシステム過熱（Overcharge）し発光・加速するが、正気度が激減する。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>序盤は雨対策の傘や帽子を最優先で作成しよう。</li>
+            <li>普段は「移動速度アップ」や「暗視」回路を装着し、ボス戦や探索など目的に合わせて回路を切り替えると万能に活躍できる。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="woodie" class="char-card">
-      <h2>ウッドジー (Woodie)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Woodie" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 6. ウィッカーボトム -->
+      <div id="wickerbottom" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Wickerbottom_Original_Portrait.png?format=original" alt="ウィッカーボトム" class="char-avatar-large">
+            <div class="char-portrait-label">WICKERBOTTOM</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Wickerbottom" target="_blank" style="color: inherit; text-decoration: underline;">ウィッカーボトム (Wickerbottom)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-s">Tier: A〜S</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★☆☆</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「魔法の『本』を読み上げ、植物成長や天候制御を行う知識の図書館長」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>150</td>
+              <td>150</td>
+              <td>250</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>初期からサイエンスマシン（第1段階クラフト施設）相当のレシピを作成できる。</li>
+            <li>専用の「本」を使うことで、周囲の作物・木を一瞬で成長させたり、鳥や触手を召喚したり、雷を落としたりできる。</li>
+            <li>正気度の上限が250と全キャラトップクラスに高い。</li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>眠ることができない（テントや寝袋で体力・正気度を回復できない）。</li>
+            <li>時間が経って腐りかけた料理（黄・赤枠）を食べると、回復効果が大幅に低下する。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>拠点で「園芸本（Applied Horticulture）」を使い、草・枝・野菜を一気に増殖させるとチーム全員の食料・素材問題を一発で解決できる。</li>
+            <li>本を使用すると正気度が大きく減るため、緑キノコ（焼いたもの）や太妃糖（Taffy）などの正気度回復アイテムを常備しよう。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="wes" class="char-card">
-      <h2>ウェス (Wes)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wes" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 7. ウッディ -->
+      <div id="woodie" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Woodie_Original_Portrait.png?format=original" alt="ウッディ" class="char-avatar-large">
+            <div class="char-portrait-label">WOODIE</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Woodie" target="_blank" style="color: inherit; text-decoration: underline;">ウッディ (Woodie)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-a">Tier: A</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★★★★☆</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「喋る斧『ルーシー』と3種の変身能力を持つ、木こり兼万能サバイバー」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>150</td>
+              <td>150</td>
+              <td>200</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>耐久無制限の喋る斧「ルーシー」を初期所持。高速で木を伐採できる。</li>
+            <li>呪いの像を食べることで、ビーバー（採掘・伐採）、ヘラジカ（戦闘）、ガチョウ（水上移動・高速探索）に変身可能。</li>
+            <li>
+              <strong>【スキルツリー】</strong> 変身の完全制御、特製歩行棒の作成、樹木巨人（Treeguard）の召喚などが可能。
+            </li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>スキル解放前は満月の夜に強制変身してしまう。</li>
+            <li>変身が切れると満腹度が激減し、装備していた防具や武器が地面に落ちるため注意。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>序盤は水上を走れる「ガチョウ形態」でマップ外周や島を一気に開放し、「ビーバー形態」で拠点の木材や石を一気に集めよう。</li>
+            <li>スキルツリーで作成できる「木製歩行棒」は序盤の貴重な移動速度アップ手段として味方にも喜ばれる。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="maxwell" class="char-card">
-      <h2>マックスウェル (Maxwell)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Maxwell" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
+      <!-- 8. ウェス -->
+      <div id="wes" class="char-card">
+        <div class="char-sidebar">
+          <img src="https://dontstarve.wiki.gg/images/Wes_Original_Portrait.png?format=original" alt="ウェス" class="char-avatar-large">
+            <div class="char-portrait-label">WES</div>
+          </div>
+        <div class="char-content">
+          <div class="char-header-text">
+            <h2 class="char-title"><a href="https://dontstarve.fandom.com/wiki/Wes" target="_blank" style="color: inherit; text-decoration: underline;">ウェス (Wes)</a></h2>
+            <div class="badge-group">
+              <span class="badge badge-tier-f">Tier: F</span>
+              <span class="badge">
+                初心者おすすめ: <span class="stars">★☆☆☆☆</span>
+              </span>
+            </div>
+          </div>
+          <div class="catchphrase">「風船アートで場を和ませる、公式公認のハンデ・超高難易度キャラクター」</div>
+
+          <table class="status-table">
+            <tr>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Health_Icon.png?format=original" alt="体力">体力
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Hunger_Icon.png?format=original" alt="満腹度">満腹度
+                </div>
+              </th>
+              <th>
+                <div class="stat-header">
+                  <img src="https://dontstarve.wiki.gg/images/Sanity_Icon.png?format=original" alt="正気度">正気度
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <td>75</td>
+              <td>75</td>
+              <td>75</td>
+            </tr>
+          </table>
+
+          <h4>特徴・固有能力</h4>
+          <ul>
+            <li>風船を作る「Balloonomancy」を所持。各種風船を作成して敵のデコイにしたり、移動速度をわずかに上げたりできる。</li>
+            <li>一切のセリフを発しない（言葉の代わりにパントマイムで表現する）。</li>
+          </ul>
+
+          <h4>デメリット・注意点</h4>
+          <ul class="warning-list">
+            <li>全ステータスが75と極めて低い。</li>
+            <li>お腹が減るスピードが非常に早く、与えるダメージは全キャラ中最低レベル。</li>
+            <li>作業効率（採掘や伐採）も悪く、雷に打たれやすいなどの隠れたデメリットが多数存在する。</li>
+          </ul>
+
+          <h4>立ち回りのコツ・アドバイス</h4>
+          <ul>
+            <li>完全なる縛りプレイ用のやり込みキャラクター。ゲームに慣れ切った上級者が難易度を上げる目的で使用する。</li>
+            <li>風船の爆発ダメージなどを駆使しつつ、味方のサポートに徹して生き残ること自体を目標としよう。</li>
+          </ul>
+
+          <div class="back-to-top">
+            <a href="#top">▲ キャラクター一覧に戻る</a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div id="wigfrid" class="char-card">
-      <h2>ウィグフリド (Wigfrid)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wigfrid" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
     </div>
-
-    <div id="webber" class="char-card">
-      <h2>ウェブスター (Webber)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Webber" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="winona" class="char-card">
-      <h2>ウィンナ (Winona)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Winona" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="warly" class="char-card">
-      <h2>ウォーリー (Warly)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Warly" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="wortox" class="char-card">
-      <h2>ウォトックス (Wortox)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wortox" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="wormwood" class="char-card">
-      <h2>ワームウッド (Wormwood)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wormwood" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="wurt" class="char-card">
-      <h2>ワート (Wurt)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wurt" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="walter" class="char-card">
-      <h2>ウォルター (Walter)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Walter" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-    <div id="wanda" class="char-card">
-      <h2>ワンダ (Wanda)</h2>
-      <p>キャラクターの解説テキストがここに入ります。</p>
-      <div class="back-to-top">
-        <a href="https://dont-starve.fandom.com/ja/wiki/Wanda" target="_blank" rel="noopener noreferrer" class="wiki-link">📖 日本語wikiへ</a>
-        <span class="divider">|</span>
-        <a href="#char-select">↑ キャラクター一覧に戻る</a>
-      </div>
-    </div>
-
-  </div>
-</body>
+  </body>
 </html>
